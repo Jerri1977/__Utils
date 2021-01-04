@@ -153,7 +153,6 @@ If  result=0
         result-1
       Case "/SPRINVERT"  
         inversion=1
-        result-1
       Default
         PrintN("Wrong parameter: "+result$)
         Input()
@@ -810,8 +809,8 @@ EndSelect
 End
 ; IDE Options = PureBasic 4.61 (Windows - x86)
 ; ExecutableFormat = Console
-; CursorPosition = 100
-; FirstLine = 62
+; CursorPosition = 155
+; FirstLine = 101
 ; Folding = +
 ; EnableUser
 ; Executable = cutter.exe
