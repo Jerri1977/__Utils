@@ -98,7 +98,7 @@ If  result=0
   PrintN("flags: /zigzag")
   PrintN("flags: /text /attr /label labelname /high spritehigh")
   PrintN("flags: /light /dark setup colors for monocolor tile default 7,0")
-  PrintN("flags: /inversion for inverted nonmasked sprites")
+  PrintN("flags: /sprinvert for inverted nonmasked sprites")
  
   Delay(1000)  
   ;file$="map.chars.png"
@@ -400,7 +400,8 @@ Next c
       mask=128
       byte=0
       For xx=0 To 7
-          color=Point(x*8+xx,y*8+yy)
+        color=Point(x*8+xx,y*8+yy)
+        
         If inversion=0
           If  color=col_body(0,0)
           ;צגוע=קמנםûי?  
@@ -809,8 +810,8 @@ EndSelect
 End
 ; IDE Options = PureBasic 4.61 (Windows - x86)
 ; ExecutableFormat = Console
-; CursorPosition = 418
-; FirstLine = 368
+; CursorPosition = 100
+; FirstLine = 62
 ; Folding = +
 ; EnableUser
 ; Executable = cutter.exe
