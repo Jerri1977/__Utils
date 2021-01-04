@@ -340,7 +340,20 @@ Next c
         col_body(1,0)=temp_col
         col_body(1,1)=temp_num
       EndIf
-   ;вбиваем цвет аттрибута в таблицу аттрибутов
+      
+      
+       If inversion;(Red(col_body(z,0))>=Red(col_body(z+1,0))) And (Green(col_body(z,0))>=Green(col_body(z+1,0))) And (Blue(col_body(z,0))>=Blue(col_body(z+1,0)))
+        index=0
+        temp_col.l=col_body(0,0)
+        temp_num.l=col_body(0,1)
+        col_body(0,0)=col_body(1,0)
+        col_body(0,1)=col_body(1,1)
+        col_body(1,0)=temp_col
+        col_body(1,1)=temp_num
+      EndIf
+
+      
+      ;вбиваем цвет аттрибута в таблицу аттрибутов
    
    temp_color=0
 ;вбиваем paper
@@ -401,21 +414,12 @@ Next c
       For xx=0 To 7
         color=Point(x*8+xx,y*8+yy)
         
-        If inversion=0
           If  color=col_body(0,0)
           ;цвет=чорный?  
           Else
           ;цвет не чорный? 
             byte=byte|mask
           EndIf
-        Else
-          If  color=col_body(0,0)
-          ;цвет=чорный?  
-            byte=byte|mask
-          Else
-          ;цвет не чорный? 
-          EndIf
-        EndIf
           
         mask>>1      
        Next xx
@@ -809,8 +813,8 @@ EndSelect
 End
 ; IDE Options = PureBasic 4.61 (Windows - x86)
 ; ExecutableFormat = Console
-; CursorPosition = 155
-; FirstLine = 101
+; CursorPosition = 344
+; FirstLine = 294
 ; Folding = +
 ; EnableUser
 ; Executable = cutter.exe
